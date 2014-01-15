@@ -4,10 +4,11 @@
 <link rel="stylesheet" type="text/css" href="css/challengeScreen.css">
 </head>
 <body>
-<!--- Specify the action page in the form tag. The form variables will
-        pass to this page when the form is submitted. --->
+
 
 <cfform action="registerInput.cfm" method="post">
+	
+<!--- Queries database for images --->
 <cfquery datasource="myProjectSource" name = myQuery>
   select imageNumber, imagePath
   from Images;
@@ -32,23 +33,13 @@
 <cfset rowList = listDeleteAt(rowlist, pos)>
 </cfloop>
 
-
-<!--- Displays Elements--->
+<!--- Debug Displays Elements
 <cfloop index = "ListElement" list = "#rList#"> 
     <cfoutput>#myQuery.imageNumber[ListElement]#</cfoutput><br> 
 </cfloop>
 <br>
 Hello
-<br>
-
-<!---<cfset myArray = ArrayNew(1)>
-
-<cfset listPos = "1">
-<cfloop index = "x" list = "#rlist#">
-	<cfif listPos lte 3>
-		<cfset ArrayAppend(myArray, "#myQuery.imageNumber[x]# #myQuery.imagePath[x]#")>
-	</cfif>
-</cfloop> --->
+<br> --->
 
 
 <!--- Creation for Challenge Sets Row Lists --->
@@ -62,13 +53,13 @@ Hello
 <cfloop index = "x" list = "#rlist#">
 	<cfif listPos lte 9>
 		<!---Adds item to Challenge Screen Set --->
-		<cfset ArrayAppend(setArray1, "#myQuery.imageNumber[x]# #myQuery.imagePath[x]#")>
+		<cfset ArrayAppend(setArray1, "#myQuery.imagePath[x]#")>
 	<cfelseif (listPos gte 10 AND listPos lte 18)>
-		<cfset ArrayAppend(setArray2, "#myQuery.imageNumber[x]# #myQuery.imagePath[x]#")>
+		<cfset ArrayAppend(setArray2, "#myQuery.imagePath[x]#")>
 	<cfelseif (listPos gte 19 AND listPos lte 27)>
-		<cfset ArrayAppend(setArray3, "#myQuery.imageNumber[x]# #myQuery.imagePath[x]#")>
+		<cfset ArrayAppend(setArray3, "#myQuery.imagePath[x]#")>
 	<cfelse>
-		<cfset ArrayAppend(setArray4, "#myQuery.imageNumber[x]# #myQuery.imagePath[x]#")>
+		<cfset ArrayAppend(setArray4, "#myQuery.imagePath[x]#")>
 	</cfif>
 	<cfset listPos += "1">
 </cfloop>

@@ -61,7 +61,7 @@ Hello
 <cfloop index = "x" list = "#rlist#">
 	<cfif listPos lte 9>
 		<!---Adds item to Challenge Screen Set --->
-		<cfset ArrayAppend(setArray1, ("#myQuery.imageNumber[x]#, #myQuery.imagePath[x]#")>
+		<cfset ArrayAppend(setArray1, "#myQuery.imagePath[x]#")>
 	<cfelseif (listPos gte 10 AND listPos lte 18)>
 		<cfset ArrayAppend(setArray2, "#myQuery.imageNumber[x]# #myQuery.imagePath[x]#")>
 	<cfelseif (listPos gte 19 AND listPos lte 27)>
