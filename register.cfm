@@ -3,6 +3,12 @@
 <title>Register form</title>
 <link rel="stylesheet" type="text/css" href="css/challengeScreen.css">
 </head>
+<script>
+function setVar()
+{
+alert("Hello World!");
+}
+</script>
 <body>
 
 
@@ -73,17 +79,8 @@ Matriculation Number (Including surname letter): <cfinput type="Text" name="user
 </p>
 
 <br>
-<cfset imgLoc=#myQuery["imagePath"][1]#> 
-<cfoutput>#myQuery["imagePath"][1]#</cfoutput><br>
-<!---
-<cfset imgLoc = myQuery.imagePath > 
-<cfoutput>#myQuery["imagePath"][1]#</cfoutput><br> --->
 
 
-<cfimage 
-    action = "writeToBrowser" 
-    source = "#imgLoc#" 
-    >
 
 
 <!--- Image for challenge screen 1 --->
@@ -172,7 +169,7 @@ Select the Third Pass Image
 <br>
 <br>
 <div class = textCentre>
-Select the Third Pass Image
+Select the Fourth Pass Image
 </div>
 <br>
 
@@ -194,36 +191,38 @@ Select the Third Pass Image
 </tr>
 </table>
 
-<!--- original design
 <br>
 <br>
 <br>
-<div class = textCentre>
-Select the Fourth Pass Image
-</div>
 <br>
-<table>
-<tr>
-<td><img src="img/test.gif"></td>
-<td><img src="img/test.gif"></td>
-<td><img src="img/test.gif"></td>
-</tr>
-<tr>
-<td><img src="img/test.gif"></td>
-<td><img src="img/test.gif"></td>
-<td><img src="img/test.gif"></td>
-</tr>
-<tr>
-<td><img src="img/test.gif"></td>
-<td><img src="img/test.gif"></td>
-<td><img src="img/test.gif"></td>
-</tr>
-</table> --->
-<!--- Redirect to Authentication Page here
-Potential for extra page displaying complete password? --->
 
 <input type="Submit" value="Confirm Selection">
 </cfform>
+<!-- selecter tests --->
+
+<table>
+<tr>
+<td><button id = "c4i1" onclick="setVar();"><cfimage action = "writeToBrowser" source = "#setArray4[1]#"></button></td>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[2]#" ></td>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[3]#" ></td>
+</tr>
+<tr>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[4]#" ></td>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[5]#" ></td>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[6]#" ></td>
+</tr>
+<tr>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[7]#" ></td>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[8]#" ></td>
+<td><cfimage action = "writeToBrowser" source = "#setArray4[9]#" ></td>
+</tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+
 
 
 </body>
