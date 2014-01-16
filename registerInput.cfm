@@ -4,10 +4,10 @@
 <body> 
  
 <!--- Insert the new record ---> 
-<cfinsert datasource="myProjectSource" tablename="userData"> 
+<!---<cfinsert datasource="myProjectSource" tablename="userData"> --->
  
 <h1>Registerd!</h1> 
-<cfoutput> You have added #Form.firstName# #Form.lastName# with Username #Form.userName# to the employee database. 
+<cfoutput> successful
 </cfoutput> 
  
 </body> 

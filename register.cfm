@@ -3,17 +3,14 @@
 <title>Register form</title>
 <link rel="stylesheet" type="text/css" href="css/challengeScreen.css">
 </head>
-<script>
-function setVar()
-{
-alert("Hello World!");
-}
-</script>
+
 <body>
 
 
-<cfform action="registerInput.cfm" method="post">
+<!---<cfform action="registerInput.cfm" method="post" onSubmit="userDatabase.displayData(firstName,lastName,userName,pass1)">--->
 	
+<cfform action="userDatabase.cfc?method=displayData(firstName, lastName, userName, pass1)" method="post">
+
 <!--- Queries database for images --->
 <cfquery datasource="myProjectSource" name = myQuery>
   select imageNumber, imagePath
@@ -75,6 +72,7 @@ Hello
 First Name: <cfinput type="Text" name="firstName" size="20"maxlength="35"><br>
 Last Name: <cfinput type="Text" name="lastName" size="20" maxlength="35"><br>
 Matriculation Number (Including surname letter): <cfinput type="Text" name="userName" size="20" maxlength="35"><br>
+
 
 </p>
 
@@ -196,14 +194,12 @@ Select the Fourth Pass Image
 <br>
 <br>
 
-<input type="Submit" value="Confirm Selection">
-</cfform>
-<!-- selecter tests --->
 
+<!-- selecter tests --->
 <table>
 <tr>
-<td><button id = "c4i1" onclick="setVar();"><cfimage action = "writeToBrowser" source = "#setArray4[1]#"></button></td>
-<td><cfimage action = "writeToBrowser" source = "#setArray4[2]#" ></td>
+<td><button type = "button" id = "c4i1" onclick=<cfset pass1 = "#setArray1[1]#">><cfimage action = "writeToBrowser" source = "#setArray4[1]#"></button></td>
+<td><button id = "c4i2" onclick=<cfset pass1 = "#setArray1[2]#">><cfimage action = "writeToBrowser" source = "#setArray4[2]#" ></td>
 <td><cfimage action = "writeToBrowser" source = "#setArray4[3]#" ></td>
 </tr>
 <tr>
@@ -217,6 +213,9 @@ Select the Fourth Pass Image
 <td><cfimage action = "writeToBrowser" source = "#setArray4[9]#" ></td>
 </tr>
 </table>
+
+<input type="Submit" value="Confirm Selection">
+</cfform>
 
 <br>
 <br>
