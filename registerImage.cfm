@@ -4,7 +4,8 @@
 <body> 
  
 <!--- Insert the new record ---> 
-<cfinsert datasource="myProjectSource" tablename="userData">
+
+#url.id#
  
 <h1>Registered!</h1> 
  
