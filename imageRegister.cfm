@@ -187,19 +187,19 @@ Select the Fourth Pass Image
 <br>
 <br>
 
-<cfset pass1 = "One">
-<cfset pass2 = "Two">
-<cfset pass3 = "Three">
-<cfset pass4 = "Four">
+<cfset session.pass1="One">
+<cfset session.pass2="Two">
+<cfset session.pass3="Three">
+<cfset session.pass4="Four">
 
 
 
-<cfform action ="userDatabase.cfc?method=addPassImage&userID=#Form.userName#&passImage1=#pass1#&passImage2=#pass2#&passImage3=#pass3#&passImage4=#pass4#" method = "post">
+<cfform action ="userDatabase.cfc?method=addPassImage&userID=#Form.userName#&passImage1=#session.pass1#&passImage2=#session.pass2#&passImage3=#session.pass3#&passImage4=#session.pass4#" method = "post">
 
 <!-- selecter tests --->
 <table>
 <tr>
-<td><button type = "button" id = "c4i1" onclick=<cfset pass1 = "setArray1">><cfimage action = "writeToBrowser" source = "#setArray4[1]#"></button></td>
+<td><button type = "button" id = "c4i1" onclick=<cfset #pass1# = "setArray">><cfimage action = "writeToBrowser" source = "#setArray4[1]#"></button></td>
 <td><cfimage action = "writeToBrowser" source = "#setArray4[2]#" ></td>
 <td><cfimage action = "writeToBrowser" source = "#setArray4[3]#" ></td>
 </tr>

@@ -13,7 +13,7 @@
 
 <!--- Queries database for images --->
 
-<cfform action = "imageRegister.cfm" method = "post">
+<cfform action = "challengeReg1.cfm" method = "post">
 
 
 <!--- Text box. --->
