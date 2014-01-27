@@ -44,4 +44,65 @@
 	
 </cffunction>
 
+<cffunction name ="addSinglePass1" access ="remote" hint = "add single image">
+	<cfargument name = "useID" type = "string" required = "true">
+	<cfargument name = "pass1" type = "string" required = "true">
+	
+	
+	<cfquery name="storeImage" datasource="myProjectSource">
+		UPDATE userPassImage
+		SET pass1 = <cfqueryparam value = "#arguments.pass1#">
+		WHERE userID = <cfqueryparam value = "#arguments.useID#">
+	</cfquery>
+</cffunction>
+
+<cffunction name = "addSinglePass1URL" access = "remote" hint="add data to database with URL">
+
+	<cfargument name = "useID" type = "string" required = "true">
+	<cfargument name = "pass1" type = "string" required = "true">
+	
+<cfquery name="storeImage" datasource="myProjectSource">
+		UPDATE userPassImage
+		SET pass1 = <cfqueryparam value = "#url.pass1#">
+		WHERE userID = <cfqueryparam value = "#url.useID#">
+	</cfquery>
+	
+
+</cffunction>
+
+<cffunction name ="addSinglePass2" access ="remote" hint = "add single image">
+	<cfargument name = "useID" type = "string" required = "true">
+	<cfargument name = "pass2" type = "string" required = "true">
+	
+	
+	<cfquery name="storeImage" datasource="myProjectSource">
+		UPDATE userPassImage
+		SET pass2 = <cfqueryparam value = "#arguments.pass2#">
+		WHERE userID = <cfqueryparam value = "#arguments.useID#">
+	</cfquery>
+</cffunction>
+
+<cffunction name ="addSinglePass3" access ="remote" hint = "add single image">
+	<cfargument name = "useID" type = "string" required = "true">
+	<cfargument name = "pass3" type = "string" required = "true">
+	
+	
+	<cfquery name="storeImage" datasource="myProjectSource">
+		UPDATE userPassImage
+		SET pass3 = <cfqueryparam value = "#arguments.pass3#">
+		WHERE userID = <cfqueryparam value = "#arguments.useID#">
+	</cfquery>
+</cffunction>
+
+<cffunction name ="addSinglePass4" access ="remote" hint = "add single image">
+	<cfargument name = "useID" type = "string" required = "true">
+	<cfargument name = "pass4" type = "string" required = "true">
+	
+	
+	<cfquery name="storeImage" datasource="myProjectSource">
+		UPDATE userPassImage
+		SET pass4 = <cfqueryparam value = "#arguments.pass4#">
+		WHERE userID = <cfqueryparam value = "#arguments.useID#">
+	</cfquery>
+</cffunction>
 </cfcomponent>
