@@ -2,14 +2,29 @@
 <head>
 <title>Register form</title>
 <link rel="stylesheet" type="text/css" href="css/challengeScreen.css">
+
 </head>
 
 <body>
 
 
-<!---<cfform action="registerInput.cfm" method="post" onSubmit="userDatabase.displayData(firstName,lastName,userName,pass1)">--->
+<cfquery datasource="myProjectSource" name = userTotal>
+  select *
+  from userData;
+</cfquery>
+
+<cfif "#userTotal.recordCount#" % 3 EQ 0>
+	<cfset auth = 0>
 	
-<!---<cfform action="userDatabase.cfc?method=displayData(firstName, lastName, userName, pass1)" method="post">--->
+<cfelseif "#userTotal.recordCount#" % 3 EQ 1>
+	<cfset auth = 1>
+
+	
+<cfelseif "#userTotal.recordCount#" % 3 EQ 2>
+	<cfset auth = 2>
+
+	
+</cfif>
 
 <!--- Queries database for images --->
 
@@ -21,6 +36,7 @@
 First Name: <cfinput type="Text" name="firstName" size="20"maxlength="35"><br>
 Last Name: <cfinput type="Text" name="lastName" size="20" maxlength="35"><br>
 Matriculation Number: <cfinput type="Text" name="userName" size="20" maxlength="35"><br>
+<input type = "hidden" name="challengeType" value = "<cfoutput>#auth#</cfoutput>">
 </p>
 
 <br>
