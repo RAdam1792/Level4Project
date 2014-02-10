@@ -2,13 +2,12 @@
 <head>
 <title>Register form</title>
 <link rel="stylesheet" type="text/css" href="css/challengeScreen.css">
+<style> td:hover{opacity:0.15;}</style>
 </head>
 
 <cfapplication name = "Tutorial" clientmanagement = "yes" sessionmanagement ="yes">
 
 <body>
-
- 
 
 <cfquery name="storeImage" datasource="myProjectSource">
 		INSERT INTO loginData(userID, timeNow, isAttack, success, image1, image2, image3, image4)
@@ -23,7 +22,7 @@
 </cfquery>
 
 <!--- http://help.adobe.com/en_US/ColdFusion/9.0/Developing/WSc3ff6d0ea77859461172e0811cbec09f0b-7fea.html--->
-<!--- Do the query --->
+<!--- Do the query ---> 
 <cfquery name="userPassImages" datasource="myProjectSource"> 
     SELECT pass1, pass2, pass3, pass4
     FROM userPassImage
@@ -32,12 +31,6 @@
  
 <!--- Declare the array ---> 
 <cfset session.passImages=ArrayNew(1)> 
- 
-
-
-
-
-
 	
 <!--- Populate the array row by row ---> 
 <cfloop query="userPassImages"> 
@@ -136,46 +129,51 @@
 	<cfset listPos += "1">
 </cfloop>
 
+
+
+
+
+
 <!-- selecter tests --->
 <table>
 <tr>
-<cfform action = "challengeAuth2.cfm?image=1" method = "post">
-<td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[1]#"></td>
+<cfform action = "challengeAuth2Type3.cfm?image=1" method = "post">
+<td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[1]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[1]#</cfoutput>">
 </cfform>
-<cfform action = "challengeAuth2.cfm?image=2" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=2" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[2]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[2]#</cfoutput>">
 </cfform>
-<cfform action = "challengeAuth2.cfm?image=3" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=3" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[3]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[3]#</cfoutput>">
 </cfform>
 </tr>
 <tr>
-<cfform action = "challengeAuth2.cfm?image=4" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=4" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[4]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[4]#</cfoutput>">
 </cfform>
-<cfform action = "challengeAuth2.cfm?image=5" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=5" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[5]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[5]#</cfoutput>">
 </cfform>
-<cfform action = "challengeAuth2.cfm?image=6" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=6" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[6]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[6]#</cfoutput>">
 </cfform>
 </tr>
 <tr>
-<cfform action = "challengeAuth2.cfm?image=7" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=7" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[7]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[7]#</cfoutput>">
 </cfform>
-<cfform action = "challengeAuth2.cfm?image=8" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=8" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[8]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[8]#</cfoutput>">
 </cfform>
-<cfform action = "challengeAuth2.cfm?image=9" method = "post">
+<cfform action = "challengeAuth2Type3.cfm?image=9" method = "post">
 <td><input type = "image" <cfimage action = "writeToBrowser" source = "#session.setArray1[9]#" ></td>
 <input type = "hidden" name="image" value ="<cfoutput>#session.setArray1[9]#</cfoutput>">
 </cfform>

@@ -15,6 +15,13 @@
 	<cfset session.authSuccess = 1>
 </cfif>
 
+<cfquery name="storeImage" datasource="myProjectSource">
+		UPDATE loginData
+		SET image1 = <cfqueryparam value = "#Form.image#">
+		WHERE userID = <cfqueryparam value = "#session.uName#"> 
+		AND timeNow = <cfqueryparam value = "#session.time#">
+	</cfquery>
+
 
 <!-- selecter tests --->
 <table>

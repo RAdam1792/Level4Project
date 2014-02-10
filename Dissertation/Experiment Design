@@ -1,0 +1,72 @@
+\documentclass{article}
+
+\begin{document}
+
+\section{Experiment Design}
+
+The experiment comprises of three stages [or just two?]. The first
+stage involves a participant registering with the system and then
+practicing logging on to it. The second stage is logging onto the
+system while being recorded by a video camera focused on the computer
+screen. The final stage involves an `attacker' watching the video clip
+and attempting to log onto the system as the user in the video.
+
+\subsection{Stage 1: Registration} 
+
+Participants will be asked to take part in this experiment by myself
+and will not be provided any compensation for taking
+part. Participants are also permitted to withdraw from the experiment
+at any time. 
+
+Each user will be sat at a computer in the Level 4 computing lab. They
+will be presented with a web page inviting them to enter their first
+name; surname and matriculation number. The names are used to provide
+myself with the ability to search the database quickly should they
+wish to withdraw. At this point the database is queried for the total
+number of users. The result of a modulus three operation on this total
+dictates which shoulder surfing countermeasure they will be using.
+
+After these attributes have been committed to the database the user is
+presented with four challenge screens across four different pages. The
+participant will select one image from each page to create their
+complete graphical password. Once all four images are selected the
+participant can then proceed to practice using the system and logging
+in with their countermeasure.
+
+\subsection{Stage 2: Recording Logins}
+
+For this stage a registered participant is asked to log on using a
+form which asks for their matriculation number. Once this is submitted
+a user is taken to the challenge screen applicable to them.
+
+A user may be presented with the following countermeasures if the
+result of the modulus three opertation at registration was as follows:
+
+-Total Users ``\%'' 3 = 0: Standard authentication where images are
+not highlighted.
+
+-Total Users ``\%'' 3 = 1: Images are highlighted as the mouse is
+hovered over them.
+
+-Total Users ``\%'' 3 = 2: Images turn opaque as they are hovered
+over.
+
+A camera is placed behind the right shoulder of the participant and
+pointed at the screen. They will then be asked to log in to the system
+while being filmed.
+
+\subsection{Stage 3: Attack}
+
+The final part of the experiment involves a second participant
+attempting to login as another user. To do this they will be provided
+with a target user's matriculation number and a video of that user's
+login. An attacker is presented with a similar form to that of a
+legitimate user but it sets a variable to indicate in the database
+records that it is indeed an attack. 
+
+[discuss here how many times an attacker should be able to view the
+video]
+
+   
+
+\end{document}

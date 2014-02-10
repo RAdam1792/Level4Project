@@ -2,6 +2,7 @@
 <head>
 <title>Register form</title>
 <link rel="stylesheet" type="text/css" href="css/challengeScreen.css">
+<style> td:hover{opacity:0.15;}</style>
 </head>
 
 <cfapplication name = "Tutorial" clientmanagement = "yes" sessionmanagement ="yes">
@@ -24,7 +25,8 @@
 		WHERE userID = <cfqueryparam value = "#session.uName#">
 		AND timeNow = <cfqueryparam value = "#session.time#">
 	</cfquery>
-
+	
+	
 <!-- selecter tests --->
 <table>
 <tr>

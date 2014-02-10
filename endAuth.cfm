@@ -33,6 +33,7 @@
 			SET image4 = <cfqueryparam value = "#Form.image#">,
 				success = <cfqueryparam value = "1">
 			WHERE userID = <cfqueryparam value = "#session.uName#">
+			AND timeNow = <cfqueryparam value = "#session.time#">
 		</cfquery>
 	<cfelse>
 		<cfquery name="endQuery" datasource="myProjectSource">
@@ -40,6 +41,7 @@
 			SET image4 = <cfqueryparam value = "#Form.image#">,
 				success = <cfqueryparam value = "0">
 			WHERE userID = <cfqueryparam value = "#session.uName#">
+			AND timeNow = <cfqueryparam value = "#session.time#">
 		</cfquery>
 	</cfif>
 		
@@ -50,6 +52,7 @@
 			SET image4 = <cfqueryparam value = "#Form.image#">,
 				success = <cfqueryparam value = "0">
 			WHERE userID = <cfqueryparam value = "#session.uName#">
+			AND timeNow = <cfqueryparam value = "#session.time#">
 		</cfquery>
 		
 </cfif>

@@ -8,13 +8,18 @@
 
 <body>
 
-<cfquery datasource="myProjectSource" name = uIDQuery>
-  select userName
-  from userData
-	WHERE userName = '#Form.userName#';
+<cfquery name="storeImage" datasource="myProjectSource">
+		INSERT INTO loginData(userID, timeNow, isAttack, success, image1, image2, image3, image4)
+		VALUES(<cfqueryparam value = "#session.uName#"/>,
+			<cfqueryparam value = "#session.time#"/>,
+			<cfqueryparam value = "#session.attack#"/>,
+			<cfqueryparam value = "0"/>,
+			<cfqueryparam value = "pass1"/>,
+			<cfqueryparam value = "pass2"/>,
+			<cfqueryparam value = "pass3"/>,
+			<cfqueryparam value = "pass4"/>);
 </cfquery>
 
-<cfset session.uName = "#uIDQuery.userName#">
 
 <!--- http://help.adobe.com/en_US/ColdFusion/9.0/Developing/WSc3ff6d0ea77859461172e0811cbec09f0b-7fea.html--->
 <!--- Do the query ---> 
